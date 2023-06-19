@@ -1,0 +1,15 @@
+#ifndef MML_I_STREAM_SERVER_HEADER_INCLUDED
+#define MML_I_STREAM_SERVER_HEADER_INCLUDED
+
+#include "mmlIStream.h"
+
+#define MML_NETWORK_STREAM_SERVER_UUID { 0xF6841037, 0x6C60, 0x1014, 0x8362 , { 0xC1, 0x43, 0x1E, 0x19, 0x5B, 0xB5 } }
+
+class mmlINetworkStreamServer : public mmlIStreamServer
+{
+	MML_OBJECT_UUID_DECL(MML_NETWORK_STREAM_SERVER_UUID)
+public:
+};
+
+
+#endif// MML_I_TCP_SERVER_HEADER_INCLUDED

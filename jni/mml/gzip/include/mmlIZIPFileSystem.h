@@ -1,0 +1,14 @@
+#ifndef MML_ZIP_FILE_SYSTEM_HEADER_INCLUDED
+#define MML_ZIP_FILE_SYSTEM_HEADER_INCLUDED
+
+#include "mmlIFileSystem.h"
+
+#define MML_ZIP_FILE_SYSTEM_UUID { 0x933F3196, 0x6BF5, 0x1014, 0xAE5B , { 0x84, 0xF0, 0x7A, 0xCE, 0xEA, 0x77 } }
+
+class mmlIZipFileSystem : public mmlIFileSystem
+{
+	MML_OBJECT_UUID_DECL(MML_ZIP_FILE_SYSTEM_UUID)
+};
+
+
+#endif //MML_ZIP_FILE_SYSTEM_HEADER_INCLUDED

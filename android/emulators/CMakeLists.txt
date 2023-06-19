@@ -1,0 +1,42 @@
+MACRO(gen_output)
+	file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/outputs.h "")
+
+	file(GLOB files "*.info")
+	foreach(fname ${files})
+	  get_filename_component(info "${fname}" NAME)
+	  string_remove_ending(info ".info")
+	  file(APPEND ${CMAKE_CURRENT_BINARY_DIR}/outputs.h "#include\"${info}.h\"\n")
+	  bin2h(SOURCE_FILE ${fname} HEADER_FILE "${CMAKE_CURRENT_BINARY_DIR}/${info}.h" VARIABLE_NAME "${info}")
+	  string(MAKE_C_IDENTIFIER "${info}" BIN2H_VARIABLE_NAME)
+	  string(REPLACE "#" ";" info_list ${info} )
+	  list(LENGTH info_list info_list_len)
+	  MATH(EXPR max_idx "${info_list_len} - 1")
+	  file(APPEND ${CMAKE_CURRENT_BINARY_DIR}/outputs.h "const char * ${BIN2H_VARIABLE_NAME}_ARGS [] = {\n")
+	  foreach(idx RANGE 0 ${max_idx})
+		list(GET info_list ${idx} arg)
+		file(APPEND ${CMAKE_CURRENT_BINARY_DIR}/outputs.h " \"${arg}\",\n")
+	  endforeach()
+	  file(APPEND ${CMAKE_CURRENT_BINARY_DIR}/outputs.h "  NULL\n};\n")
+	endforeach()
+
+	file(APPEND ${CMAKE_CURRENT_BINARY_DIR}/outputs.h "struct {\n const char ** args;\n const char * info;\n const int size;\n }\noutputs[] = {\n")
+
+	file(GLOB files "*.info")
+	foreach(fname ${files})
+	  get_filename_component(info ${fname} NAME)
+	  string_remove_ending(info ".info")
+	  string(REPLACE "#" ";" info_list ${info} )
+
+	  string(MAKE_C_IDENTIFIER "${info}" BIN2H_VARIABLE_NAME)
+
+	  file(APPEND ${CMAKE_CURRENT_BINARY_DIR}/outputs.h " {${BIN2H_VARIABLE_NAME}_ARGS , ${BIN2H_VARIABLE_NAME}, ${BIN2H_VARIABLE_NAME}_SIZE},\n")
+	endforeach() 
+
+	file(APPEND ${CMAKE_CURRENT_BINARY_DIR}/outputs.h "  {NULL, NULL, 0}\n};\n")
+ENDMACRO()
+
+add_subdirectory(getprop)
+add_subdirectory(service)
+add_subdirectory(settings)
+add_subdirectory(pm)
+add_subdirectory(dumpsys)

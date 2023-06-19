@@ -1,0 +1,38 @@
+stages:
+  - build
+  - publish
+  
+build:
+  stage: build
+  tags:
+    - android-ndk
+    
+  script:
+    - /opt/android-ndk-r16b/ndk-build -j `getconf _NPROCESSORS_ONLN`
+    - git clone https://gitlab-ci-token:$CI_BUILD_TOKEN@gitlab.trker.me/devops/llnwdeploy.git llnwdeploy
+    - cd llnwdeploy && gradle jar && cd ../ && java -jar llnwdeploy/out/llnwdeploy.jar --deploy
+  only:
+    - master
+
+publish_test:
+  stage: publish
+  tags:
+    - java
+  script:
+    - git clone https://gitlab-ci-token:$CI_BUILD_TOKEN@gitlab.trker.me/devops/llnwdeploy.git llnwdeploy
+    - cd llnwdeploy && gradle jar && cd ../ && java -jar llnwdeploy/out/llnwdeploy.jar --publish=test
+  only:
+    - master
+  when: manual
+
+publish_prod:
+  stage: publish
+  tags:
+    - java
+  script:
+    - git clone https://gitlab-ci-token:$CI_BUILD_TOKEN@gitlab.trker.me/devops/llnwdeploy.git llnwdeploy
+    - cd llnwdeploy && gradle jar && cd ../ && java -jar llnwdeploy/out/llnwdeploy.jar --publish=production
+  only:
+    - master
+  when: manual
+  

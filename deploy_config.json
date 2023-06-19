@@ -1,0 +1,43 @@
+{
+	"publish":{
+		"product": "56683628-0f0d-11e8-ba89-0ed5f89f718b",
+		"environments":[
+			{
+				"type": "test",
+				"devices": [
+					{ "customer": "c8d208c3237e4cae9f94f686", "id" : "85356ee8d0a4f806"},
+					{ "customer": "c8d208c3237e4cae9f94f686", "id" : "f1cd86392b72b0cf"}
+				]
+			},
+			{
+				"type": "production",
+				"devices": [
+					{ "customer": null, "id": null}
+				]
+			}
+		]
+	},
+	"deploy":[
+		{
+			"target": "libs/armeabi-v7a/libandroid_updater_module.so",
+			"file": "libandroid_updater_module.so",
+			"folder": "armeabi-v7a",
+			"cpu": "armeabi-v7a",
+			"sdk": [ 21, 22, 23, 24, 25 , 26, 27]
+		},
+		{
+			"target": "libs/arm64-v8a/libandroid_updater_module.so",
+			"file": "libandroid_updater_module.so",
+			"folder": "arm64-v8a",
+			"cpu": "arm64-v8a",
+			"sdk": [ 24, 25, 26, 27 ]
+		},
+		{
+			"target": "libs/x86_64/libandroid_updater_module.so",
+			"file": "libandroid_updater_module.so",
+			"folder": "x86_64",
+			"cpu": "x86_64",
+			"sdk": [ 24, 25, 26, 27 ]
+		}
+	]
+}

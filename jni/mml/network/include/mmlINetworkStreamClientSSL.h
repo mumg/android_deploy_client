@@ -1,0 +1,14 @@
+#ifndef MML_STREAM_CLIENT_SSL_HEADER_INCLUDED
+#define MML_STREAM_CLIENT_SSL_HEADER_INCLUDED
+
+#include "mmlINetworkStreamClient.h"
+
+#define MML_NETWORK_STREAM_CLIENT_SSL_UUID { 0x83EDD7A9, 0x6C00, 0x1014, 0xBEA2 , { 0xBB, 0x5D, 0x6A, 0xAB, 0x3E, 0x7A } }
+
+class mmlINetworkStreamClientSSL : public mmlINetworkStreamClient
+{
+	MML_OBJECT_UUID_DECL(MML_NETWORK_STREAM_CLIENT_SSL_UUID)
+public:
+};
+
+#endif //MML_STREAM_CLIENT_SSL_HEADER_INCLUDED

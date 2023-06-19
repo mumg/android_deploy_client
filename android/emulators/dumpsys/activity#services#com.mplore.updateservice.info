@@ -1,0 +1,12 @@
+ACTIVITY MANAGER SERVICES (dumpsys activity services)
+  User 0 active services:
+  * ServiceRecord{ff7e89e u0 com.mplore.updateservice/.UpdateService}
+    intent={act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] cmp=com.mplore.updateservice/.UpdateService}
+    packageName=com.mplore.updateservice
+    processName=com.mplore.updateservice
+    baseDir=/data/app/com.mplore.updateservice-NtwxUCP2YX0mtf_FYljPzA==/base.apk
+    dataDir=/data/user/0/com.mplore.updateservice
+    app=ProcessRecord{a87749b 18046:com.mplore.updateservice/u0a93}
+    createTime=-13h38m44s941ms startingBgTimeout=--
+    lastActivity=-13h38m44s901ms restartTime=-13h38m44s901ms createdFromFg=true
+    startRequested=true delayedStop=false stopIfKilled=false callStart=true lastStartId=1

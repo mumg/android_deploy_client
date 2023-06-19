@@ -1,0 +1,71 @@
+Receiver Resolver Table:
+  Non-Data Actions:
+      com.mplore.ads.popup.action.START_AD:
+        6d8600f com.mplore.updateservice/.AdReceiver filter 31d5f32
+          Action: "com.mplore.ads.popup.action.START_AD"
+          Category: "android.intent.category.DEFAULT"
+      com.mplore.updateservice.DEBUG:
+        1ffa89c com.mplore.updateservice/.DebugReceiver filter 4931b3d
+          Action: "com.mplore.updateservice.DEBUG"
+
+Key Set Manager:
+  [com.mplore.updateservice]
+      Signing KeySets: 20
+
+Packages:
+  Package [com.mplore.updateservice] (3e282a5):
+    userId=10093
+    pkg=Package{bde167a com.mplore.updateservice}
+    codePath=/data/app/com.mplore.updateservice-NtwxUCP2YX0mtf_FYljPzA==
+    resourcePath=/data/app/com.mplore.updateservice-NtwxUCP2YX0mtf_FYljPzA==
+    legacyNativeLibraryDir=/data/app/com.mplore.updateservice-NtwxUCP2YX0mtf_FYljPzA==/lib
+    primaryCpuAbi=null
+    secondaryCpuAbi=null
+    versionCode=2 minSdk=19 targetSdk=23
+    versionName=aef66ef
+    splits=[base]
+    apkSigningVersion=2
+    applicationInfo=ApplicationInfo{4c4ee2b com.mplore.updateservice}
+    flags=[ HAS_CODE ALLOW_CLEAR_USER_DATA ALLOW_BACKUP ]
+    dataDir=/data/user/0/com.mplore.updateservice
+    supportsScreens=[small, medium, large, xlarge, resizeable, anyDensity]
+    timeStamp=2018-04-07 13:51:51
+    firstInstallTime=2018-04-03 15:18:23
+    lastUpdateTime=2018-04-07 13:51:53
+    signatures=PackageSignatures{8acb288 [bc007ee5]}
+    installPermissionsFixed=true installStatus=1
+    pkgFlags=[ HAS_CODE ALLOW_CLEAR_USER_DATA ALLOW_BACKUP ]
+    requested permissions:
+      android.permission.INTERNET
+      android.permission.ACCESS_NETWORK_STATE
+      android.permission.PACKAGE_USAGE_STATS
+      android.permission.SYSTEM_ALERT_WINDOW
+    install permissions:
+      android.permission.SYSTEM_ALERT_WINDOW: granted=true
+      android.permission.INTERNET: granted=true
+      android.permission.PACKAGE_USAGE_STATS: granted=true
+      android.permission.ACCESS_NETWORK_STATE: granted=true
+    User 0: ceDataInode=409580 installed=true hidden=false suspended=false stopped=false notLaunched=false enabled=0 instant=false virtual=false
+      gids=[3003]
+      runtime permissions:
+
+Package Changes:
+  Sequence number=220
+  User 0:
+    seq=14, package=com.google.android.gms
+    seq=199, package=com.google.android.setupwizard
+    seq=214, package=com.mplore.updateservice
+    seq=218, package=com.opkix.lines
+    seq=219, package=com.mplore.checkers
+
+
+Dexopt state:
+  [com.mplore.updateservice]
+    path: /data/app/com.mplore.updateservice-NtwxUCP2YX0mtf_FYljPzA==/base.apk
+      arm64: /data/app/com.mplore.updateservice-NtwxUCP2YX0mtf_FYljPzA==/oat/arm64/base.odex[status=kOatUpToDate, compil
+      ation_filter=quicken]
+
+
+Compiler stats:
+  [com.mplore.updateservice]
+     base.apk - 1454
